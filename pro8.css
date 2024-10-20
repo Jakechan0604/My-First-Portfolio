@@ -1,0 +1,324 @@
+@font-face {
+  font-family: "ROWDIES-BOLD";
+  src: url(/FONTS/Rowdies-Bold.ttf);
+}
+
+@font-face {
+  font-family: "ROWDIES-LIGHT";
+  src: url(/FONTS/Rowdies-Light.ttf);
+}
+
+@font-face {
+  font-family: "ROWDIES-REGULAR";
+  src: url(/FONTS/Rowdies-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-color: hsl(0, 0%, 55%);
+  --dark-color: hsl(0, 0%, 15%);
+  --second-light-color: hsl(0, 0%, 100%);
+  --second-dark-color: hsl(0, 0%, 0%);
+}
+
+body {
+  background-image: linear-gradient(hsl(0, 0%, 83%), hsl(0, 0%, 66%), hsl(0, 0%, 0%));
+  height: 120vh;
+}
+
+body.activated {
+  --light-color: hsl(0, 0%, 55%);
+  --dark-color: hsl(0, 0%, 70%);
+  --second-light-color: hsl(0, 0%, 0%);
+  --second-dark-color: hsl(0, 0%, 75%);
+}
+
+.header-container {
+  background-color: var(--dark-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0.2rem;
+  z-index: 100;
+}
+
+.header-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title-container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#header-title {
+  color: var(--second-light-color);
+  text-shadow: 2px 2px 3px hsl(0, 0%, 0%);
+  font-size: 3.5rem;
+  font-family: "ROWDIES-BOLD";
+}
+
+.nav-container {
+  width: 100%;
+  height: 20%;
+}
+
+.nav-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-links {
+  list-style: none;
+}
+
+.links {
+  color: var(--second-light-color);
+  text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+  font-size: 0.8rem;
+  font-family: "ROWDIES-LIGHT";
+}
+
+.links:hover{
+  color: var(--second-dark-color);
+  text-shadow: 1px 1px 3px hsl(0, 0%, 100%), -1px -1px 3px hsl(0, 0%, 100%);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 0.5s all;
+}
+
+.mode-changer-buttons {
+  background-color: var(--second-dark-color);
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  opacity: 0;
+  scale: 0;
+  transition: 0.5s ease-out all;
+}
+
+.mode-changer-buttons.activated {
+  opacity: 1;
+  scale: 1;
+  transition: 0.5s ease-in all;
+}
+
+.mode-btns {
+  width: 40%;
+  padding: 0.2rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--dark-color);
+  color: var(--second-light-color);
+  text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+}
+
+.mode-btns:hover {
+  border: 2px solid var(--second-light-color);
+  box-shadow: 2px 2px 3px hsl(0, 0%, 100%), -2px -2px 3px hsl(0, 0%, 100%);
+  transition: 0.3s all;
+}
+
+.main-container {
+  width: 100%;
+  height: 80vh;
+  margin-top: 8rem;
+  border-bottom: 5px solid var(--second-light-color);
+}
+
+.main-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-image-container {
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image-content {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 270px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.main-infos-container {
+  width: 100%;
+  max-width: 95%;
+  height: 50%;
+  text-align: center;
+}
+
+.infos-main {
+  font-family: "ROWDIES-BOLD";
+  font-size: 2rem;
+  color: var(--second-light-color);
+  text-shadow: 1px 1px 3px var(--second-dark-color);
+}
+
+#highlighted {
+  color: var(--second-dark-color);
+  text-shadow: 2px 2px 3px var(--second-light-color);
+}
+
+.infos-sub {
+  font-family: "ROWDIES-REGULAR";
+  color: var(--second-light-color);
+  text-shadow: 1px 1px 3px var(--second-dark-color);
+}
+
+.infos-details {
+  background-color: var(--second-dark-color);
+  border: 2px solid var(--second-dark-color);
+  border-radius: 20px;
+  color: var(--second-light-color);
+  padding: 0.5rem;
+  font-family: "ROWDIES-LIGHT";
+}
+
+.main-image-container {
+  width: 100%;
+  max-width: 80%;
+  height: 50%;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid var(--second-dark-color);
+  box-shadow: 2px 2px 3px var(--second-dark-color), -2px -2px 3px var(--second-dark-color);
+}
+
+.footer-container {
+  width: 100%;
+  height: 40vh;
+  background-color: var(--second-dark-color);
+}
+
+.footer-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-title {
+  background-color: var(--dark-color);
+  width: 100%;
+  height: 70%;
+}
+
+.footer-title-details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--second-light-color);
+  text-shadow: 2px 2px 3px var(--second-dark-color);
+}
+
+.footer-socials {
+  width: 100%;
+  height: 20%;
+}
+
+.footer-socials-icons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-socials-icons i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--second-light-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 0.2rem;
+}
+
+.footer-contacts {
+  width: 100%;
+  height: 10%;
+  background-color: var(--second-light-color)
+}
+
+#phone-numbers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 700px) {
+  .header-content-container {
+    flex-direction: row;
+    padding-inline: 1rem;
+  }
+
+  .mode-changer-buttons {
+    border: 2px solid var(--second-light-color);
+  }
+}
